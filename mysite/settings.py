@@ -80,9 +80,15 @@ from dotenv import (
     load_dotenv,
 )
 load_dotenv(find_dotenv())
+
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600),
-    'OPTIONS': {'sslmode': 'require'}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER':  os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST':  os.environ.get('DATABASE_HOST'),
+    }
 }
 
 
