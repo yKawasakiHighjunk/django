@@ -82,6 +82,7 @@ from dotenv import (
 load_dotenv(find_dotenv())
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600),
+    'OPTIONS': {'sslmode': 'require'}
 }
 
 
