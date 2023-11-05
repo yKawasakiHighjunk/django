@@ -30,4 +30,5 @@ urlpatterns = [
     path('top/', include("app.urls")),
     path("blog/", include("blog.urls")),
     path("text_edit/", include("text_edit.urls")),
+    path("", include("registration.urls")),
 ]
